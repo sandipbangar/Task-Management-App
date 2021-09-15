@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU" crossorigin="anonymous">
+
+    <!-- Fontawesome Icon -->
+    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css"
+        integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous" />
+
+    <title>Task Management App</title>
+
+</head>
+
+<body style="background-color: #ebf3ff;">
+
+    <!-- Modal -->
+    <div class="modal fade" id="newTask" tabindex="-1" aria-labelledby="newTaskLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="newTaskLabel">Modal title</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <div class="mb-3">
+                        <label for="imageURL" class="form-label">Image URL</label>
+                        <input type="url" class="form-control" id="imageURL" placeholder="http://image.com/image.jpg">
+                    </div>
+                    <div class="mb-3">
+                        <label for="taskTitle" class="form-label">Task Title</label>
+                        <input type="text" class="form-control" id="taskTitle" placeholder="web developement">
+                    </div>
+                    <div class="mb-3">
+                        <label for="taskType" class="form-label">Task Type</label>
+                        <input type="text" class="form-control" id="taskType" placeholder="practice">
+                    </div>
+                    <div class="mb-3">
+                        <label for="taskDescription" class="form-label">Task Description</label>
+                        <textarea id="taskDescription" class="form-control" rows="3" placeholder="This is DOM Manipulation"></textarea>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-primary">Save changes</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- providing header for navbar -->
+    <header>
+        <nav class="navbar navbar-expand-lg navbar-light bg-light shadow">
+
+            <!-- providing div and anchor for the Brand icon  -->
+            <div class="container-fluid">
+                <a href="#" class="fs-3 fw-bolder">Tasky</a>
+
+                <!-- button provided for hamburger icon from bootstrap  -->
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#navbarSupportContent" aria-controls="navbarSuppportContent" aria-expanded="false"
+                    aria-label="Toggle navigation">
+
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <!-- provided home button as anchor tag/link -->
+                <div class="collapse navbar-collapse" id="navbarSupportContent">
+                    <ul class="navbar-nav ms-3 me-auto mb-2 mb-lg-0">
+                        <li class="nav-item">
+                            <a href="#" class="nav-link" aria-current="page">Home</a>
+                        </li>
+                    </ul>
+
+                    <button class="btn btn-primary" type="button" data-bs-toggle="modal" data-bs-target="#newTask">
+                        <i class="far fa-plus"></i> Add New
+                    </button>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <!-- defining the search box to a sep. cotainer  -->
+    <main class="container">
+        <!-- sectioning and giving margin and position to search box for lg and md  -->
+        <section class="row justify-content-center mt-5">
+            <div class="col-md-8 col-lg-6">
+                <div class="input-group mb-3 shadow">
+                    <input type="search" class="form-control" placeholder="Search Task" aria-label="Search Task"
+                        aria-describedby="basic-addon1">
+                    <span class="input-group-text" id="basic-addon1">
+                        <i class="fas fa-search"></i>
+                    </span>
+                </div>
+            </div>
+        </section>
+
+        <!-- Task Container  -->
+        <!-- Card 1  -->
+        <section class="task_container row">
+            <div class="col-md-6 col-lg-4 my-4">
+
+                <div class="card">
+                    <div class="card-header gap-2 d-flex justify-content-end">
+                        <button class="btn btn-outline-info">
+                            <i class="fal fa-pencil"></i>
+                        </button>
+                        <button class="btn btn-outline-danger">
+                            <i class="fas fa-trash-alt"></i>
+                        </button>
+                    </div>
+                    <div class="card-body">
+                        <img src="https://th.bing.com/th/id/R.07be29f57cd50f11bc5aa6c612a94510?rik=%2bxicE55Mt%2fiVPg&riu=http%3a%2f%2fcallingdreams.com%2fwp-content%2fuploads%2f2016%2f02%2fstart-now-motivational-picture-quote.jpg&ehk=MdWwYG8mnJ%2f5m3TjUv3Zb4DYD3%2f%2fp%2b3q33Rv7DP9Myo%3d&risl=&pid=ImgRaw&r=0"
+                            alt="Image" class="card-img">
+                        <h5 class="card-title mt-3">Task Title</h5>
+                        <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
+                        <span class="badge bg-primary">New</span>
+                    </div>
+                    <div class="card-footer">
+                        <button class="btn btn-outline-primary">Open Task</button>
+                    </div>
+                </div>
+
+            </div>
+
+            <!-- Card 2  -->
+            <!-- <div class="col-md-6 col-lg-4 my-4">
+
+                <div class="card">
+                    <div class="card-header gap-2 d-flex justify-content-end">
+                      <button class="btn btn-outline-info">
+                        <i class="fal fa-pencil"></i>
+                      </button>
+                      <button class="btn btn-outline-danger">
+                        <i class="fas fa-trash-alt"></i>
+                      </button>
+                    </div>
+                    <div class="card-body">
+                        <img src="https://th.bing.com/th/id/R.07be29f57cd50f11bc5aa6c612a94510?rik=%2bxicE55Mt%2fiVPg&riu=http%3a%2f%2fcallingdreams.com%2fwp-content%2fuploads%2f2016%2f02%2fstart-now-motivational-picture-quote.jpg&ehk=MdWwYG8mnJ%2f5m3TjUv3Zb4DYD3%2f%2fp%2b3q33Rv7DP9Myo%3d&risl=&pid=ImgRaw&r=0" alt="Image" class="card-img">
+                        <h5 class="card-title mt-3">Task Title</h5>
+                        <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
+                        <span class="badge bg-primary">New</span>
+                    </div>
+                    <div class="card-footer">
+                        <button class="btn btn-outline-primary">Open Task</button>
+                    </div>
+                  </div>
+
+            </div> -->
+
+            <!-- Card 3  -->
+            <!-- <div class="col-md-6 col-lg-4 my-4">
+
+                <div class="card">
+                    <div class="card-header gap-2 d-flex justify-content-end">
+                      <button class="btn btn-outline-info">
+                        <i class="fal fa-pencil"></i>
+                      </button>
+                      <button class="btn btn-outline-danger">
+                        <i class="fas fa-trash-alt"></i>
+                      </button>
+                    </div>
+                    <div class="card-body">
+                        <img src="https://th.bing.com/th/id/R.07be29f57cd50f11bc5aa6c612a94510?rik=%2bxicE55Mt%2fiVPg&riu=http%3a%2f%2fcallingdreams.com%2fwp-content%2fuploads%2f2016%2f02%2fstart-now-motivational-picture-quote.jpg&ehk=MdWwYG8mnJ%2f5m3TjUv3Zb4DYD3%2f%2fp%2b3q33Rv7DP9Myo%3d&risl=&pid=ImgRaw&r=0" alt="Image" class="card-img">
+                        <h5 class="card-title mt-3">Task Title</h5>
+                        <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
+                        <span class="badge bg-primary">New</span>
+                    </div>
+                    <div class="card-footer">
+                        <button class="btn btn-outline-primary">Open Task</button>
+                    </div>
+                  </div>
+
+            </div> -->
+        </section>
+    </main>
+
+
+
+    <!-- JavaScript Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-/bQdsTh/da6pkI1MST/rWKFNjaCP5gBSY4sEBT38Q/9RBh9AH40zEOg7Hlq2THRZ" crossorigin="anonymous">
+    </script>
+</body>
+
+</html>
